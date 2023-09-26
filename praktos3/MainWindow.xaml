@@ -1,0 +1,40 @@
+﻿<Window x:Class="praktos3.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:praktos3"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="316" Width="550">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="previous" Content="&lt;" HorizontalAlignment="Center"  VerticalAlignment="Top" Width="69" Click="btn_Click" Grid.Row="3" />
+        <Button x:Name="play_and_stop" Content="▶" HorizontalAlignment="Center"  VerticalAlignment="Top" Width="69" Click="play_and_stop_Click" Grid.Column="1" Grid.Row="3"/>
+        <Button x:Name="next" Content="&gt;" HorizontalAlignment="Center"  VerticalAlignment="Top" Width="68" Click="btn_Click" Grid.Column="2" Grid.Row="3"/>
+        <Button x:Name="repeat" Content="🔁" HorizontalAlignment="Center"  VerticalAlignment="Top" Width="69" Click="btn_Click" Grid.Column="3" Grid.Row="3"/>
+        <Button x:Name="random" Content="🔀" HorizontalAlignment="Center"  VerticalAlignment="Top" Width="69" Click="btn_Click" Grid.Column="4" Grid.Row="3"/>
+        <Button x:Name="choose" Content="Выбрать папку"  VerticalAlignment="Top" HorizontalAlignment="Center" Click="btn_Click" Grid.Column="5" Grid.Row="3" Grid.ColumnSpan="3"/>
+        <Slider x:Name="slider" HorizontalAlignment="Center" VerticalAlignment="Top" Width="205" ValueChanged="Slider_ValueChanged" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="3"/>
+        <Label x:Name="song_name" Content="" HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="206" Height="28" RenderTransformOrigin="0.51,0.681" Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="1"/>
+        <Label x:Name="now_second" Content="" HorizontalAlignment="Center" VerticalAlignment="Top" Width="36" Grid.Column="0" Grid.Row="2"/>
+        <Label x:Name="total_second" Content="" HorizontalAlignment="Center" VerticalAlignment="Top" RenderTransformOrigin="0,0.202" Width="43" Grid.Column="4" Grid.Row="2"/>
+        <ListBox x:Name="songs" d:ItemsSource="{d:SampleData ItemCount=5}" SelectionChanged="songs_SelectionChanged" Grid.Column="5" Grid.ColumnSpan="3" Grid.RowSpan="3"/>
+        <MediaElement x:Name="media" LoadedBehavior="Manual" MediaEnded="media_MediaEnded" MediaOpened="media_MediaOpened"></MediaElement>
+    </Grid>
+</Window>
